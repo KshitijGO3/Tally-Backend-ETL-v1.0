@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>O3 — Executive Financial Intelligence</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="apple-touch-icon" href="/static/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/styles.css?v=20261029c">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0b0f19',
+                            slate: '#f1f4f9',
+                            purple: '#4f46e5',
+                            accent: '#6366f1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-indigo-50/60 to-slate-100 text-slate-800 min-h-screen flex flex-col md:flex-row antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- ─── Desktop Left Navigation Rail ───────────────────────────────────────── -->
+    <aside class="hidden md:flex w-20 flex-col items-center justify-between py-6 bg-white text-slate-700 shrink-0 border-r border-slate-200 shadow-sm min-h-screen">
+        <div class="flex flex-col items-center space-y-6">
+            <a href="/dashboard" class="w-12 h-12 flex items-center justify-center hover:scale-105 transition-all">
+                <img src="/static/images/logo.png" alt="O3 Logo" class="w-full h-full object-contain">
+            </a>
+        </div>
+
+        <div class="relative group">
+            <button onclick="toggleProfileMenu(event)" title="Account" aria-haspopup="true"
+                    class="w-10 h-10 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shadow-md shadow-indigo-500/30 hover:ring-2 hover:ring-indigo-300 transition-all cursor-pointer">
+                <span class="user-avatar-initials">MK</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ─── Mobile Header ──────────────────────────────────────────────────────── -->
+    <header class="md:hidden flex items-center justify-between px-5 py-3.5 bg-white text-slate-900 border-b border-slate-200 shadow-sm shrink-0">
+        <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 flex items-center justify-center">
+                <img src="/static/images/logo.png" alt="O3 Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="font-bold text-sm tracking-wide text-slate-900">O3</span>
+        </div>
+        <button onclick="toggleProfileMenu(event)" title="Account" aria-haspopup="true"
+                class="w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center">
+            <span class="user-avatar-initials">MK</span>
+        </button>
+    </header>
+
+    <!-- Mobile drawer backdrop -->
+    <div id="drawer-backdrop" class="hidden md:hidden fixed inset-0 z-30 bg-slate-900/40 backdrop-blur-sm" onclick="toggleMobileDrawer()"></div>
+
+    <div class="flex-1 flex flex-col lg:flex-row overflow-x-clip min-h-screen">
+
+        <!-- ─── Dashboard Main Column ──────────────────────────────────────────── -->
+        <main class="flex-1 min-w-0 p-4 sm:p-6 md:p-10 pb-44 md:pb-10 space-y-6 md:space-y-8">
+
+            <!-- Top Controls Row -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="space-y-1.5">
+                    <div class="relative inline-block max-w-full">
+                    <div id="company-switcher-btn" role="button" tabindex="0" aria-haspopup="listbox" onclick="toggleCompanyMenu(event)" onkeydown="if(event.key==='Enter')toggleCompanyMenu(event)"
+                         class="inline-flex items-center gap-2.5 cursor-pointer group rounded-full bg-white/70 backdrop-blur px-3.5 py-1.5 ring-1 ring-slate-200 shadow-sm hover:ring-indigo-300 transition-all">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                            <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+                        </span>
+                        <span class="font-bold text-sm md:text-base text-slate-900 group-hover:text-indigo-600 transition-colors company-display-name">
+                            Shree Polychem
+                        </span>
+                        <svg id="company-chevron" class="w-4 h-4 shrink-0 text-slate-500 group-hover:text-indigo-600 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Company dropdown menu -->
+                    <div id="company-menu" role="listbox" class="hidden absolute left-0 top-full mt-2 z-50 w-80 max-w-[calc(100vw-2rem)] rounded-2xl bg-white shadow-2xl ring-1 ring-slate-900/10 p-2">
+                        <div class="px-3 pt-1.5 pb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">Switch company</div>
+                        <div id="company-menu-list" class="space-y-1"></div>
+                    </div>
+                    </div>
+                    <div id="books-updated-label" class="text-xs font-semibold text-slate-500 pl-1">
+                        • Books updated to 15 Oct
+                    </div>
+                    <div id="sync-paused-label" class="hidden inline-flex items-center gap-1.5 ml-1 rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2.5 py-1 text-xs font-semibold">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6 4h3v12H6V4zm5 0h3v12h-3V4z"></path></svg>
+                        <span id="sync-paused-text"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Executive Greeting -->
+            <div>
+                <h2 id="executive-greeting-title" class="text-3xl md:text-4xl 2xl:text-5xl font-extrabold tracking-tight pb-1 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-700 bg-clip-text text-transparent">
+                    Good morning, Manoj.
+                </h2>
+                <!-- Summary card: the headline context for every number below -->
+                <div class="mt-3 relative overflow-hidden rounded-2xl bg-white/90 ring-1 ring-slate-200/80 shadow-sm pl-5 pr-4 py-3.5 sm:pl-6 sm:py-4">
+                    <span class="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-indigo-500 to-violet-500"></span>
+                    <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                        <svg class="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        <span>Summary</span>
+                        <span id="executive-summary-period" class="normal-case tracking-normal font-semibold text-slate-500"></span>
+                    </div>
+                    <p id="executive-greeting-subtitle" class="mt-1 text-lg md:text-xl font-semibold leading-snug text-slate-800">
+                        Collections up 9%, sales up 18% vs 1–15 Sep.
+                    </p>
+                    <div id="executive-insights" class="hidden mt-3 pt-3 border-t border-slate-100 space-y-2.5">
+                        <p id="executive-interpretation" class="text-sm md:text-base text-slate-600 leading-relaxed"></p>
+                        <ul id="executive-facts" class="space-y-1 text-sm text-slate-500"></ul>
+                        <div id="executive-watch" class="flex flex-wrap items-center gap-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Period Filter -->
+            <div class="space-y-3">
+                <div class="flex items-center gap-2 text-xs font-semibold">
+                    <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M4 11h16M5 5h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z"></path></svg>
+                    <span class="uppercase tracking-wider text-[10px] font-bold text-slate-400">Period</span>
+                    <span id="period-range-label" class="text-slate-700"></span>
+                </div>
+
+                <div id="period-chips" class="-mx-4 sm:mx-0 px-4 sm:px-0 flex gap-2 overflow-x-auto sm:flex-wrap pb-1 [scrollbar-width:none]">
+                    <button type="button" data-period="mtd" onclick="selectPeriod('mtd')"
+                            class="period-chip shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-bold border transition-all bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-transparent shadow-md shadow-indigo-500/30">Month to date</button>
+                    <button type="button" data-period="last_30_days" onclick="selectPeriod('last_30_days')"
+                            class="period-chip shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-bold border transition-all bg-white/80 text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600">Last 30 days</button>
+                    <button type="button" data-period="last_60_days" onclick="selectPeriod('last_60_days')"
+                            class="period-chip shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-bold border transition-all bg-white/80 text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600">Last 60 days</button>
+                    <button type="button" data-period="last_90_days" onclick="selectPeriod('last_90_days')"
+                            class="period-chip shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-bold border transition-all bg-white/80 text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600">Last 90 days</button>
+                    <button type="button" data-period="current_fy" onclick="selectPeriod('current_fy')"
+                            class="period-chip shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-bold border transition-all bg-white/80 text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600">This FY</button>
+                    <button type="button" data-period="previous_fy" onclick="selectPeriod('previous_fy')"
+                            class="period-chip shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-bold border transition-all bg-white/80 text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600">Last FY</button>
+                    <button type="button" data-period="custom" onclick="selectPeriod('custom')"
+                            class="period-chip shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs sm:text-sm font-bold border transition-all bg-white/80 text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600">Custom</button>
+                </div>
+
+                <!-- Kept for the period logic in app.js; the chips above drive it -->
+                <select id="period-dropdown" class="sr-only" tabindex="-1" aria-hidden="true" onchange="handlePeriodSelectionChange(this.value)">
+                    <option value="mtd" selected id="selected-period-label">Month to Date</option>
+                    <option value="last_30_days">Last 30 days</option>
+                    <option value="last_60_days">Last 60 days</option>
+                    <option value="last_90_days">Last 90 days</option>
+                    <option value="current_fy">Current Financial Year</option>
+                    <option value="previous_fy">Previous Financial Year</option>
+                    <option value="custom">Custom date range</option>
+                </select>
+
+                <div id="custom-date-container" class="hidden flex flex-wrap items-center gap-2 bg-white/80 backdrop-blur border border-slate-200 rounded-2xl px-3 py-2 shadow-sm text-xs">
+                    <div class="flex items-center gap-1.5">
+                        <label for="custom-start-date" class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">From</label>
+                        <input type="date" id="custom-start-date" class="border border-slate-200 rounded-lg px-1.5 py-0.5 text-xs font-medium text-slate-700 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <label for="custom-end-date" class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">To</label>
+                        <input type="date" id="custom-end-date" class="border border-slate-200 rounded-lg px-1.5 py-0.5 text-xs font-medium text-slate-700 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                    </div>
+                    <button onclick="applyCustomDateRange()" id="apply-custom-date-btn"
+                            class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:brightness-110 text-white font-semibold px-3 py-1 rounded-full text-xs shadow-sm transition-all cursor-pointer">
+                        Apply
+                    </button>
+                </div>
+            </div>
+
+            <!-- Period KPI Tiles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2.5 sm:gap-5">
+
+                <!-- Sales -->
+                <div data-kpi="sales" role="button" tabindex="0" onclick="openKpiModal('sales')" onkeydown="if(event.key==='Enter')openKpiModal('sales')"
+                     class="kpi-card group relative overflow-hidden cursor-pointer bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 2xl:p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Sales</span>
+                        <span class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8M14 7h7v7"></path></svg>
+                        </span>
+                    </div>
+                    <div class="mt-2 sm:mt-5 flex items-baseline gap-1.5 sm:gap-2">
+                        <span id="kpi-sales-value" class="text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-slate-900 tracking-tight tabular-nums">₹ 1.84</span>
+                        <span id="kpi-sales-unit" class="text-base sm:text-lg 2xl:text-xl font-semibold text-slate-400">Cr</span>
+                    </div>
+                    <div id="kpi-sales-trend" class="mt-2 sm:mt-4 inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold leading-tight bg-emerald-50 text-emerald-700">
+                        ↑ 18% vs 1–15 Sep
+                    </div>
+                </div>
+
+                <!-- Collections -->
+                <div data-kpi="collections" role="button" tabindex="0" onclick="openKpiModal('collections')" onkeydown="if(event.key==='Enter')openKpiModal('collections')"
+                     class="kpi-card group relative overflow-hidden cursor-pointer bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 2xl:p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Collections</span>
+                        <span class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-2.2 0-4 .9-4 2s1.8 2 4 2 4 .9 4 2-1.8 2-4 2m0-8c1.7 0 3.2.6 4 1.5M12 8V6m0 10v2m9-6a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </span>
+                    </div>
+                    <div class="mt-2 sm:mt-5 flex items-baseline gap-1.5 sm:gap-2">
+                        <span id="kpi-collections-value" class="text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-slate-900 tracking-tight tabular-nums">₹ 1.42</span>
+                        <span id="kpi-collections-unit" class="text-base sm:text-lg 2xl:text-xl font-semibold text-slate-400">Cr</span>
+                    </div>
+                    <div id="kpi-collections-trend" class="mt-2 sm:mt-4 inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold leading-tight bg-emerald-50 text-emerald-700">
+                        ↑ 9% vs 1–15 Sep
+                    </div>
+                </div>
+
+                <!-- Purchases -->
+                <div data-kpi="purchases" role="button" tabindex="0" onclick="openKpiModal('purchases')" onkeydown="if(event.key==='Enter')openKpiModal('purchases')"
+                     class="sm:col-span-2 xl:col-span-1 kpi-card group relative overflow-hidden cursor-pointer bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 2xl:p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-400 to-orange-500"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Purchases</span>
+                        <span class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l2.4 12h11.2L21 7H6M9 19a1 1 0 100 2 1 1 0 000-2zm8 0a1 1 0 100 2 1 1 0 000-2z"></path></svg>
+                        </span>
+                    </div>
+                    <div class="mt-2 sm:mt-5 flex items-baseline gap-1.5 sm:gap-2">
+                        <span id="kpi-purchases-value" class="text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-slate-900 tracking-tight tabular-nums">₹ 1.51</span>
+                        <span id="kpi-purchases-unit" class="text-base sm:text-lg 2xl:text-xl font-semibold text-slate-400">Cr</span>
+                    </div>
+                    <div id="kpi-purchases-trend" class="mt-2 sm:mt-4 inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold leading-tight bg-rose-50 text-rose-700">
+                        ↓ 6% vs 1–15 Sep
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Point-in-time snapshots (receivables + inventory), side by side -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-5">
+
+            <!-- Receivables: a point-in-time balance, so it sits apart from the period tiles -->
+            <section aria-label="Outstanding balance" class="space-y-2.5">
+                <div class="flex items-center gap-3 px-1 pt-2">
+                    <span class="w-1.5 h-6 rounded-full bg-gradient-to-b from-violet-500 to-fuchsia-500"></span>
+                    <h3 class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900">Outstanding balance</h3>
+                    <span class="flex-1 h-px bg-slate-300/70"></span>
+                </div>
+
+                <div data-kpi="receivables" role="button" tabindex="0" onclick="openKpiModal('receivables')" onkeydown="if(event.key==='Enter')openKpiModal('receivables')"
+                     class="kpi-card group relative overflow-hidden cursor-pointer bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 2xl:p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Receivables</span>
+                        <span class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </span>
+                    </div>
+                    <div class="mt-2 sm:mt-5 flex items-baseline gap-1.5 sm:gap-2">
+                        <span id="kpi-receivables-value" class="text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-slate-900 tracking-tight tabular-nums">₹ 2.36</span>
+                        <span id="kpi-receivables-unit" class="text-base sm:text-lg 2xl:text-xl font-semibold text-slate-400">Cr</span>
+                    </div>
+                    <div id="kpi-receivables-asof" class="mt-2 sm:mt-4 inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold leading-tight bg-slate-100 text-slate-600">
+                        as of 15 Oct
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inventory: point-in-time snapshot; click to expand item-level detail -->
+            <section aria-label="Inventory" class="space-y-2.5">
+                <div class="flex items-center gap-3 px-1 pt-2">
+                    <span class="w-1.5 h-6 rounded-full bg-gradient-to-b from-sky-500 to-cyan-500"></span>
+                    <h3 class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900">Inventory</h3>
+                    <span class="flex-1 h-px bg-slate-300/70"></span>
+                </div>
+
+                <div data-kpi="inventory" role="button" tabindex="0" onclick="openInventoryModal()" onkeydown="if(event.key==='Enter')openInventoryModal()"
+                     class="kpi-card group relative overflow-hidden cursor-pointer bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 2xl:p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-500 to-cyan-500"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Inventory Value</span>
+                        <span class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        </span>
+                    </div>
+                    <div class="mt-2 sm:mt-5 flex items-baseline gap-1.5 sm:gap-2">
+                        <span id="kpi-inventory-value" class="text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-slate-900 tracking-tight tabular-nums">₹ 0.00</span>
+                        <span id="kpi-inventory-unit" class="text-base sm:text-lg 2xl:text-xl font-semibold text-slate-400"></span>
+                    </div>
+                    <div class="mt-2 sm:mt-4 flex flex-wrap items-center gap-2">
+                        <span id="kpi-inventory-items" class="inline-flex rounded-full px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold leading-tight bg-slate-100 text-slate-600">0 items</span>
+                        <span id="kpi-inventory-instock" class="inline-flex rounded-full px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold leading-tight bg-emerald-50 text-emerald-700">0 in stock</span>
+                        <span id="kpi-inventory-oos" class="inline-flex rounded-full px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold leading-tight bg-rose-50 text-rose-700">0 out of stock</span>
+                    </div>
+                </div>
+            </section>
+
+            </div>
+
+            <div class="flex items-center gap-2 text-xs text-slate-400 font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Autonomous continuous synchronization active • Data refreshed automatically from Tally ERP.
+            </div>
+
+        </main>
+
+        <!-- ─── Ask O3 Conversational Panel ────────────────────────────────────── -->
+        <aside id="ask-o3-panel"
+               class="fixed md:sticky md:top-8 md:self-start bottom-0 right-0 z-40 w-full md:w-[420px] bg-white/90 backdrop-blur-xl rounded-t-3xl md:rounded-3xl border border-white shadow-2xl ring-1 ring-slate-900/5 p-4 md:p-6 flex flex-col justify-between shrink-0 h-[85vh] md:h-[calc(100vh-4rem)] md:my-8 md:mr-8 transition-transform duration-300 drawer-collapsed">
+
+            <!-- Mobile Grab Handle -->
+            <div class="md:hidden w-full flex flex-col items-center pb-2 cursor-pointer" onclick="toggleMobileDrawer()">
+                <div class="w-10 h-1 rounded-full bg-slate-300 mb-2"></div>
+            </div>
+
+            <!-- Panel Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center space-x-2.5 cursor-pointer" onclick="toggleMobileDrawer()">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/30">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-base text-slate-900 tracking-tight">Ask O3</span>
+                    <span class="flex items-center gap-1 text-[10px] font-semibold text-emerald-600 bg-emerald-50 rounded-full px-2 py-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online
+                    </span>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <button onclick="handleClearConversation()" title="Clear conversation thread"
+                            class="p-1.5 text-slate-400 hover:text-rose-500 rounded-lg hover:bg-rose-50 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                    </button>
+                    <button id="mobile-drawer-toggle-icon" onclick="toggleMobileDrawer()" aria-label="Toggle Ask O3" class="md:hidden p-2 text-indigo-500 hover:text-indigo-700 transition-transform duration-300 rotate-180">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile quick-ask bar: visible only while the panel is tucked away -->
+            <button id="mobile-ask-bar" type="button" onclick="openDrawerAndFocusInput()"
+                    class="md:hidden mt-3 w-full flex items-center justify-between rounded-full border border-slate-200 bg-white pl-4 pr-1.5 py-1.5 text-sm text-slate-400 shadow-sm active:scale-[0.99] transition">
+                <span>Ask about sales, collections…</span>
+                <span class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 text-white flex items-center justify-center shadow-md shadow-indigo-500/30">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+            </button>
+
+            <!-- Message Stream -->
+            <div id="chat-messages-container" class="flex-1 overflow-y-auto space-y-4 py-4 pr-1 text-sm">
+                <div class="flex items-start gap-2.5">
+                    <div class="w-7 h-7 flex items-center justify-center shrink-0 mt-0.5">
+                        <img src="/static/images/logo.png" alt="O3" class="w-full h-full object-contain">
+                    </div>
+                    <div class="chat-prose bg-slate-50 border border-slate-200/70 text-slate-800 rounded-2xl rounded-tl-none p-3.5 max-w-[88%] shadow-sm">
+                        Hi Manoj, I'm O3. Ask me about sales, collections, receivables or purchases for <strong class="company-display-name">Shree Polychem</strong>, or tap a question below.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggestions: all chips before the first question, one rotating chip once the chat has started -->
+            <div id="suggestions-section" class="pt-2 pb-3 border-t border-slate-100">
+              <div id="suggestions-full">
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                    Try Asking
+                </div>
+                <div class="flex flex-wrap gap-x-4 gap-y-0.5">
+                    <button onclick="handlePromptChipClick('How were collections this month?')"
+                            class="text-xs font-medium text-slate-700 py-1 text-left hover:text-indigo-600 transition-colors">
+                        How were collections this month?
+                    </button>
+                    <button onclick="handlePromptChipClick('Which invoices are unpaid?')"
+                            class="text-xs font-medium text-slate-700 py-1 text-left hover:text-indigo-600 transition-colors">
+                        Which invoices are unpaid?
+                    </button>
+                    <button onclick="handlePromptChipClick('Who pays me the slowest?')"
+                            class="text-xs font-medium text-slate-700 py-1 text-left hover:text-indigo-600 transition-colors">
+                        Who pays me the slowest?
+                    </button>
+                    <button onclick="handlePromptChipClick('How were sales this week?')"
+                            class="text-xs font-medium text-slate-700 py-1 text-left hover:text-indigo-600 transition-colors">
+                        How were sales this week?
+                    </button>
+                </div>
+              </div>
+
+              <div id="suggestions-compact" class="hidden">
+                <div class="flex items-center gap-2">
+                    <span class="shrink-0 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Try Asking</span>
+                    <button id="rotating-suggestion" type="button" onclick="handleRotatingSuggestionClick()"
+                            class="min-w-0 flex-1 truncate text-left text-xs font-medium text-slate-700 py-1.5 hover:text-indigo-600 transition-all duration-200 motion-reduce:transition-none">
+                    </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="pt-1">
+                <div id="answering-company-label" class="text-[11px] text-slate-400 font-medium mb-1.5">
+                    Answering for Shree Polychem
+                </div>
+                <form onsubmit="handleSendMessage(event)" class="relative">
+                    <div class="rounded-full border border-slate-200 bg-white focus-within:border-indigo-500 focus-within:ring-4 focus-within:ring-indigo-500/10 shadow-sm transition-all flex items-center pr-2 pl-4 py-1.5">
+                        <input type="text" id="chat-input-field" required
+                               placeholder="Ask about sales, collections..."
+                               class="w-full text-base md:text-sm font-normal text-slate-800 placeholder-slate-400 bg-transparent focus:outline-none">
+                        <button type="submit" aria-label="Send Message"
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 text-white flex items-center justify-center hover:brightness-110 hover:scale-105 transition-all shrink-0 shadow-md shadow-indigo-500/30">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ─── Profile Popup Menu ─────────────────────────────────────────────────── -->
+    <div id="profile-menu" role="menu" class="hidden fixed z-50 w-60 rounded-2xl bg-white shadow-2xl ring-1 ring-slate-900/10 p-2">
+        <div class="px-3 py-2.5 mb-1 border-b border-slate-100">
+            <div id="profile-menu-name" class="text-sm font-bold text-slate-900 truncate">Account</div>
+            <div id="profile-menu-email" class="text-xs text-slate-500 truncate"></div>
+            <div id="profile-menu-company-id-row" class="hidden mt-2 pt-2 border-t border-slate-100">
+                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Company ID:</div>
+                <div id="profile-menu-company-id" class="mt-0.5 text-[11px] font-mono font-medium text-slate-600 break-all select-all"></div>
+            </div>
+        </div>
+        <button id="pause-sync-btn" role="menuitem" onclick="handleToggleSync()"
+                class="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition-colors">
+            <svg id="pause-sync-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M6 4h3v12H6V4zm5 0h3v12h-3V4z"></path></svg>
+            <span id="pause-sync-label">Pause Sync</span>
+        </button>
+        <button role="menuitem" onclick="handleUserLogout()"
+                class="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-rose-50 hover:text-rose-600 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+            Sign out
+        </button>
+    </div>
+
+    <!-- ─── KPI Detail Modal (sales / collections / purchases / receivables) ───── -->
+    <div id="kpi-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="kpi-modal-title">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="closeKpiModal()"></div>
+        <div class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl ring-1 ring-slate-900/10 p-5 sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+                <div class="min-w-0">
+                    <h3 id="kpi-modal-title" class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900">Details</h3>
+                    <p id="kpi-modal-subtitle" class="text-sm text-slate-500 mt-1"></p>
+                </div>
+                <button type="button" onclick="closeKpiModal()" aria-label="Close" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="kpi-modal-body" class="mt-5 space-y-6"></div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+                <button type="button" id="kpi-modal-ask-btn" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 text-white text-sm font-semibold px-4 py-2 shadow-md shadow-indigo-500/30 hover:brightness-110 transition">
+                    Ask O3 about this
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Inventory Detail Modal ─────────────────────────────────────────────── -->
+    <div id="inventory-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="inventory-modal-title">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="closeInventoryModal()"></div>
+        <div class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl ring-1 ring-slate-900/10 p-5 sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <h3 id="inventory-modal-title" class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900">Inventory Summary</h3>
+                    <p id="inventory-modal-subtitle" class="text-sm text-slate-500 mt-1"></p>
+                </div>
+                <button type="button" onclick="closeInventoryModal()" aria-label="Close" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="inventory-modal-body" class="mt-5 space-y-6"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js?v=20261030e"></script>
+</body>
+</html>

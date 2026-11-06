@@ -1,0 +1,2233 @@
+
+{
+    "status": "1",
+    "data": {
+        "metadata": {
+            "is_mst_dep_type": true,
+            "mst_dep_type": "8"
+        },
+        "collection": [
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Abc Party",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "ledgerphone": {
+                    "type": "String",
+                    "value": "764387326845"
+                },
+                "ledgercontact": {
+                    "type": "String",
+                    "value": "Mr. A"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-243900.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Abc Party",
+                            "(ABC Party Pvt Ltd)"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Advertising Expenses",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Indirect Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Advertising Expenses"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Akshaya Enterprises",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Creditors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "125000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "125000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "125000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Akshaya Enterprises"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Amar Enterprises",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-250000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-250000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-250000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Amar Enterprises"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "ANS Traders",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-365000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "ANS Traders"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Bank of India",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Capital Account"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Bank of India"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Basic Salary",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Direct Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-4838.71"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-4838.71"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-4838.71"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Basic Salary"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Capital A/c - Sanjay Sharma",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Capital Account"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Capital A/c - Sanjay Sharma"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Capital A/c - Vijay Verma",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Capital Account"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Capital A/c - Vijay Verma"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Cash",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Cash-in-Hand"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-14000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-14000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-14000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "10000.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Cash"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Communication Charges",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Indirect Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Communication Charges"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Conveyance",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Indirect Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Conveyance"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Customer ABC",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "ledgerphone": {
+                    "type": "String",
+                    "value": "0888888"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Customer ABC"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Customer ABC 29",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Customer ABC 29"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Customer ABC 30",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Customer ABC 30"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Customer ABC 44",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Customer ABC 44"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Customer New 11",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Customer New 11"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "DA",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Direct Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "DA"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Furniture",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Fixed Assets"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-100000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-100000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-100000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Furniture"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "HDFC BANK A/c",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Bank Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-1975000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-1975000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-1975000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "-2000000.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "HDFC BANK A/c"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Jagdish Enterprise",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-5414500.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "441500.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "441500.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Jagdish Enterprise"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Kotak Bank",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Bank Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Kotak Bank"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Kotak Mahindra Bank A/c",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Bank Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Kotak Mahindra Bank A/c"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Kotak Mahindra Bank A/c 001",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Bank Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Kotak Mahindra Bank A/c 001"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Office Rent",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Indirect Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-100000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-100000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-100000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Office Rent"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Printing & Stationery",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Indirect Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-1000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-1000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-1000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Printing & Stationery"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Profit & Loss A/c",
+                    "reservedname": "Profit & Loss A/c"
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "\u0004 Primary"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "1381861.29"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Profit & Loss A/c"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Purchase",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Purchase Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-284000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-284000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-284000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Purchase"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Raman Enterprises",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Creditors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "305000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Raman Enterprises"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Ramu",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Ramu"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Salary Payable",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Current Liabilities"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "7338.71"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "7338.71"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "7338.71"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Salary Payable"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Sales",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sales Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "6394700.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "6394700.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "6394700.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Sales"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Sales A/c",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sales Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Sales A/c"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Sales New A/c",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sales Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "20000.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Sales New A/c"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Sheetal Enterprises",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Creditors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-1296000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-1296000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-1296000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Sheetal Enterprises"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Standard Bank A/c",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Bank Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Standard Bank A/c"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "State Bank A/c",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Bank Accounts"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "State Bank A/c"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Sunil Enterprises",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Creditors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "100000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "100000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "100000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Sunil Enterprises"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "TA",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Direct Expenses"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-2500.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-2500.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-2500.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "TA"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Vishal Enterprises",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Creditors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "1150000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Vishal Enterprises"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "Vishnu Traders",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-10000.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": "-10000.00"
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": "-10000.00"
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "-10000.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "Vishnu Traders"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "xyz Company",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "xyz Company"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "XYZ Party",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "ledgerphone": {
+                    "type": "String",
+                    "value": "864387326845"
+                },
+                "ledgercontact": {
+                    "type": "String",
+                    "value": "Mr. X"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": "-21300.00"
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "XYZ Party"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "à²¶à³à²°à³",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "à²¶à³à²°à³"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

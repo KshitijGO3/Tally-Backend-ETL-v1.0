@@ -1,0 +1,2 @@
+[console_scripts]
+backend-etl = backend_ETL.main:main

@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tally API Explorer | Test API Integration | TallyPrime</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="description"
+    content="Test Tally API integrations in a safe sandbox environment. Experiment with TallyPrime API Explorer, test endpoints, and validate integration before production." />
+  <meta name="author" content="Tally" />
+  <!-- Bootstrap 5 CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="css/tally-connector-sandbox.css" rel="stylesheet" />
+
+  <!-- Google Tag Manager function for header -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5M5SRH24');</script>
+  <!-- End Google Tag Manager function for header -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) for header -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M5SRH24" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) for header -->
+  <!-- Hero Section -->
+  <section class="hero-section px-3 px-md-4 py-2 py-md-3">
+    <div class="container-fluid">
+      <div class="row align-items-center py-1">
+        <div class="col-auto order-3 order-md-1">
+          <a href="/">
+            <img class="logo" style="width: 3rem"
+              src="/wp-content/themes/tally/assets/images/prime-logo/tally-prime-vertical-logo-no-bg.svg"
+              alt="TallyPrime logo" />
+          </a>
+        </div>
+
+        <div class="col text-center order-2">
+          <div class="hero-title fw-bold fs-4 fs-md-3 mb-0">
+            TallyPrime API Explorer
+          </div>
+        </div>
+
+        <div class="col-auto order-1 order-md-3 d-flex justify-content-center align-items-center" style="width: 3rem">
+          <button class="btn border-0 p-0 d-lg-none" id="sidebarToggle" type="button" aria-label="Toggle sidebar">
+            <i class="bi bi-list fs-1" style="color: var(--tally-navy);"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Row 2: Description centered -->
+      <div class="row justify-content-center py-1 hero-description-row">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <p class=" mb-0 mx-auto" style="font-size: 1.1rem">
+            An interactive sandbox tool to learn, validate, and explore XML and JSON requests in TallyPrime
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="app-layout">
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" role="navigation">
+      <nav>
+        <div class="mb-1">
+          <a href="#" class="sidebar-nav-item brand tabs" data-id="tally-api-explorer">
+            <span class="flex-grow-1">Introduction</span>
+          </a>
+        </div>
+        <div class="mb-1">
+          <a href="#" class="sidebar-nav-item brand tabs  text-light-blue active" data-id="prerequisite">
+            <span class="flex-grow-1">Let's Get You Started</span>
+          </a>
+        </div>
+        <!-- Accounting Masters -->
+        <div class="mt-3 text-light-blue">
+          <button type="button"
+            class="sidebar-nav-item section-title w-100 d-flex align-items-center tabs text-light-blue"
+            data-id="accounting-master" data-bs-toggle="collapse" data-bs-target="#collapseAccounting">
+            <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+            <span>Accounting Masters</span>
+          </button>
+          <div class="collapse show sidebar-collapse-content" id="collapseAccounting">
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="ledger"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseLedger">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Ledger</span>
+              </button>
+              <div class="collapse show" id="collapseLedger">
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="create-ledger">Create a
+                  Ledger</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="alter-ledger">Alter a
+                  Ledger</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="delete-ledger">Delete a
+                  Ledger</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-a-ledger">Pull a
+                  Ledger</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-all-ledger">Pull All
+                  Ledgers</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-ledgers-of-group">Pull
+                  Ledgers of Group</a>
+              </div>
+            </div>
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="group-overview"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseGroup">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Group</span>
+              </button>
+              <div class="collapse" id="collapseGroup">
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="create-group">Create a
+                  Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="alter-group">Alter a
+                  Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="delete-group">Delete a
+                  Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-group">Pull a Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-all-groups">Pull All
+                  Groups</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-groups-of-group">Pull
+                  Groups of Group</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Inventory Masters -->
+        <div class="mt-3 text-light-blue">
+          <button type="button"
+            class="sidebar-nav-item section-title w-100 d-flex align-items-center tabs text-light-blue"
+            data-id="inventory-master" data-bs-toggle="collapse" data-bs-target="#collapseInventory">
+            <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+            <span>Inventory Masters</span>
+          </button>
+          <div class="collapse sidebar-collapse-content" id="collapseInventory">
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="stock-item"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseStockItem">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Stock Item</span>
+              </button>
+              <div class="collapse" id="collapseStockItem">
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="create-stock-item">Create a
+                  Stock Item</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="alter-stock-item">Alter a
+                  Stock Item</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="delete-stock-item">Delete a
+                  Stock Item</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-stock-item">Pull a
+                  Stock Item</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-all-stock-items">Pull
+                  All Stock Item</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-stock-items-of-stock-group">Pull Stock Items of Stock Group</a>
+              </div>
+            </div>
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="stock-group"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseStockGroup">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Stock Group</span>
+              </button>
+              <div class="collapse" id="collapseStockGroup">
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="create-stock-group">Create a
+                  Stock Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="alter-stock-group">Alter a
+                  Stock Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="delete-stock-group">Delete a
+                  Stock Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-stock-group">Pull a
+                  Stock Group</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-all-stock-groups">Pull
+                  All Stock Groups</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-stock-group-zero-balance">Pull Stock Group With Zero Balance</a>
+              </div>
+            </div>
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="units"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseUnits">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Units</span>
+              </button>
+              <div class="collapse" id="collapseUnits">
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="create-simple-unit">Create a
+                  Simple Unit</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="create-compound-unit">Create
+                  a Compound Unit</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="alter-unit">Alter a Unit</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="delete-unit">Delete a
+                  Unit</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-unit">Pull a Unit</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue" data-id="pull-all-units">Pull all
+                  Units</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transactions -->
+        <div class="mt-3 text-light-blue">
+          <button type="button"
+            class="tabs text-light-blue sidebar-nav-item section-title w-100 d-flex align-items-center"
+            data-id="transactions" data-bs-toggle="collapse" data-bs-target="#collapseTransactions">
+            <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+            <span>Transactions</span>
+          </button>
+          <div class="collapse" id="collapseTransactions">
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="accounting-vouchers"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseAccountingVouchers">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Accounting Vouchers</span>
+              </button>
+              <div class="collapse" id="collapseAccountingVouchers">
+                <div class="mt-1 text-light-blue">
+                  <button type="button" data-id="payment"
+                    class="tabs text-light-blue sidebar-nav-item nested-2 w-100 d-flex align-items-center"
+                    data-bs-toggle="collapse" data-bs-target="#collapsePayment">
+                    <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                    <span>Payment</span>
+                  </button>
+                  <div class="collapse" id="collapsePayment">
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="payment-create-banking">Create a Payment with Banking Details</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="payment-create-cash">Create a Payment with Cash</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="payment-alter">Alter a
+                      Payment</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="payment-delete">Delete a
+                      Payment</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="payment-pull-all">Pull
+                      all Payment vouchers</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="payment-pull-period">Pull all Payment vouchers for a period</a>
+                  </div>
+                </div>
+                <div class="mt-1 text-light-blue">
+                  <button type="button" data-id="receipt"
+                    class="tabs text-light-blue sidebar-nav-item nested-2 w-100 d-flex align-items-center"
+                    data-bs-toggle="collapse" data-bs-target="#collapseReceipt">
+                    <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                    <span>Receipt</span>
+                  </button>
+                  <div class="collapse" id="collapseReceipt">
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="receipt-create">Create a
+                      Receipt with Banking Details</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="receipt-create-cash">Create a Receipt with Cash Details</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="receipt-alter">Alter a
+                      Receipt</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="receipt-delete">Delete a
+                      Receipt</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="receipt-pull-all">Pull
+                      all Receipt vouchers</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="receipt-pull-period">Pull all Receipt vouchers for a period</a>
+                  </div>
+                </div>
+                <div class="mt-1 text-light-blue">
+                  <button type="button" data-id="sales"
+                    class="tabs text-light-blue sidebar-nav-item nested-2 w-100 d-flex align-items-center"
+                    data-bs-toggle="collapse" data-bs-target="#collapseSalesNav">
+                    <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                    <span>Sales</span>
+                  </button>
+                  <div class="collapse" id="collapseSalesNav">
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="sales-create-item">Create Sales with Item</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="sales-create-gst">Create
+                      Sales with GST</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="sales-alter">Alter a
+                      Sales</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="sales-delete">Delete a
+                      Sales</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="sales-pull-all">Pull all
+                      Sales vouchers</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="sales-pull-period">Pull
+                      all Sales vouchers for a period</a>
+                  </div>
+                </div>
+                <div class="mt-1 text-light-blue">
+                  <button type="button" data-id="purchase"
+                    class="tabs text-light-blue sidebar-nav-item nested-2 w-100 d-flex align-items-center"
+                    data-bs-toggle="collapse" data-bs-target="#collapsePurchaseNav">
+                    <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                    <span>Purchase</span>
+                  </button>
+                  <div class="collapse" id="collapsePurchaseNav">
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="purchase-create-item">Create Purchase with Item</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="purchase-create-gst">Create Purchase with GST</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="purchase-alter">Alter a
+                      Purchase</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="purchase-delete">Delete
+                      a Purchase</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue" data-id="purchase-pull-all">Pull
+                      all Purchase vouchers</a>
+                    <a href="#" class="sidebar-nav-item nested-3 tabs text-light-blue"
+                      data-id="purchase-pull-period">Pull all Purchase vouchers for a period</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Reports -->
+        <div class="mt-3 text-light-blue">
+          <button type="button"
+            class="sidebar-nav-item section-title w-100 d-flex align-items-center tabs text-light-blue"
+            data-id="reports" data-bs-toggle="collapse" data-bs-target="#collapseReports">
+            <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+            <span>Reports</span>
+          </button>
+          <div class="collapse" id="collapseReports">
+            <!-- Trial Balance -->
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="trial-balance"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseTrialBalance">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Trial Balance</span>
+              </button>
+              <div class="collapse" id="collapseTrialBalance">
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-trial-balance-period">Pull Trial Balance for any Period</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-trial-balance-detailed">Pull Trial Balance Detailed</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-trial-balance-plain">Pull Trial Balance Plain Format</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-trial-balance-empty-fields">Pull Trial Balance with Empty Fields</a>
+                <!-- <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-trial-balance-repeated-period">Pull Trial Balance for a Repeated Period</a> -->
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-trial-balance-ledger-wise">Pull Trial Balance Ledger wise</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-trial-balance-group">Pull Trial Balance for a Group</a>
+              </div>
+            </div>
+            <!-- Sales Register -->
+            <div class="mt-1 text-light-blue">
+              <button type="button" data-id="sales-register"
+                class="tabs text-light-blue sidebar-nav-item nested-1 w-100 d-flex align-items-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseSalesRegister">
+                <i class="bi bi-chevron-down sidebar-chevron me-1" aria-expanded="true"></i>
+                <span>Sales Register</span>
+              </button>
+              <div class="collapse" id="collapseSalesRegister">
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-sales-register-period">Pull Sales Register for any Period</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-sales-register-plain">Pull Sales Register Plain Format</a>
+                <a href="#" class="sidebar-nav-item nested-2 tabs text-light-blue"
+                  data-id="pull-sales-register-empty-fields">Pull Sales Register with Empty Fields</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <!-- Main Content -->
+
+    <!-- section 1 -->
+    <div id="main-mount-point" class="d-flex flex-column flex-grow-1 overflow-hidden" style="min-height: 100vh"></div>
+  </div>
+  <section class="py-5" style="background: #e8f4fc">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center mb-3">Need Help? Reach out to us here</h5>
+        </div>
+        <div class="col-md-12 col-6 offset-md-0 offset-3">
+          <div class="text-center row justify-content-center">
+            <div class="col-auto">
+              <a href="https://help.tallysolutions.com/integrate-with-tallyprime/" target="_blank"
+                class="text-dark text-decoration-none">TallyHelp</a>
+            </div>
+            <div class="col-auto">
+              <a href="mailto:support.tallydeveloper@tallysolutions.com"
+                class="text-dark text-decoration-none">Email</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- jQuery -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js?v=1.0.0"></script>
+
+
+  <!-- Video Modal (dynamic — driven by .video-modal-trigger buttons) -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="videoModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9">
+            <iframe id="videoModalIframe" src="" title=""
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../utility/js/ga_engagement_script.js" defer></script>
+</body>
+
+</html>

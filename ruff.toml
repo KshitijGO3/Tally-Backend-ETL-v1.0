@@ -1,0 +1,13 @@
+line-length = 100
+target-version = "py312"
+
+[lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = []
+
+[lint.per-file-ignores]
+"src/backend_ETL/canonical_schema.py" = ["E501"]
+
+[format]
+quote-style = "double"
+indent-style = "space"

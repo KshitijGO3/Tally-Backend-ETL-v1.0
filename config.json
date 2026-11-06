@@ -1,0 +1,15 @@
+{
+  "postgres_host": "o3-agent-tally-intel.cl2yaoeii1sk.ap-south-1.rds.amazonaws.com",
+  "postgres_user": "postgres",
+  "postgres_db": "tally_warehouse",
+  "postgres_port": "5432",
+  "aws_secret_name": "arn:aws:secretsmanager:ap-south-1:716397954499:secret:rds!db-347098f7-6901-44f7-ad39-20abf6fbb1aa-hxtbI2",
+  "aws_region": "ap-south-1",
+  "ssl_root_cert": "/home/ec2-user/app/global-bundle.pem",
+  "backend_host": "0.0.0.0",
+  "backend_port": "8000",
+  "log_dir": "/home/ec2-user/app/logs",
+  "log_level": "INFO",
+  "ollama_host": "http://localhost:11434",
+  "ollama_model": "qwen2.5:7b"
+}

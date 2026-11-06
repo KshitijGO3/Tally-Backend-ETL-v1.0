@@ -1,0 +1,3 @@
+
+{
+    "status": "1","data":{"bsbody":{"bsinfo":{"bssources":{"bsdetail":[{"bsname":{"dspaccname":{"dspdispname":"Capital Account"}},"bsamt":[{}]},{"bsname":{"dspaccname":{"dspdispname":"Loans (Liability)"}},"bsamt":[{}]},{"bsname":{"dspaccname":{"dspdispname":"Current Liabilities"}},"bsamt":[{"bsmainamt":233555.00}]},{"bsname":{"dspaccname":{"dspdispname":"Profit & Loss A/c"}},"bsamt":[{}]}]},"bsapp":{"bsdetail":[{"bsname":{"dspaccname":{"dspdispname":"Current Assets"}},"bsamt":[{"bsmainamt":-1998000.00}]}]}}}}}

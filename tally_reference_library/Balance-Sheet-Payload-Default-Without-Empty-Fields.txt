@@ -1,0 +1,2 @@
+
+{    "static_variables": [        {            "name": "svExportFormat",            "value": "jsonex"        },      {            "name": "svCurrentCompany",            "value": "Bhrama Enterprises"        }    ]}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O3 — Executive Sign In</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="apple-touch-icon" href="/static/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/styles.css?v=20261027b">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0b0f19',
+                            card: '#111827',
+                            purple: '#4f46e5',
+                            indigo: '#4338ca',
+                            accent: '#6366f1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Ambient background gradients -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-900/30 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-2xl shadow-2xl p-8 relative z-10 backdrop-blur-md">
+        <!-- Logo and Title -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-800/80 p-2 shadow-inner border border-slate-700/50 mb-3">
+                <img src="/static/images/logo.png" alt="O3 Logo" class="w-full h-full object-contain">
+            </div>
+            <h1 class="text-2xl font-bold tracking-tight text-white">Welcome to O3</h1>
+            <p class="text-xs text-slate-400 mt-1 font-medium">Conversational Financial Intelligence for Tally ERP</p>
+        </div>
+
+        <!-- Auth Tabs -->
+        <div class="grid grid-cols-2 bg-slate-800/60 p-1 rounded-xl mb-6 border border-slate-800 text-xs font-semibold">
+            <button id="tab-login" onclick="switchAuthTab('login')" class="py-2 rounded-lg bg-indigo-600 text-white transition-all shadow-sm">
+                Sign In
+            </button>
+            <button id="tab-register" onclick="switchAuthTab('register')" class="py-2 rounded-lg text-slate-400 hover:text-white transition-all">
+                Set Password / Activate
+            </button>
+        </div>
+
+        <!-- Alert Message Container -->
+        <div id="auth-alert" class="hidden mb-4 p-3 rounded-xl text-xs font-medium border"></div>
+
+        <!-- Login Form -->
+        <form id="form-login" onsubmit="handleUserLogin(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Business Email</label>
+                <input type="email" id="login-email" required
+                       placeholder="manoj@shreepolychem.com"
+                       class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            </div>
+
+            <div>
+                <div class="flex items-center justify-between mb-1.5">
+                    <label class="block text-xs font-medium text-slate-300">Password</label>
+                </div>
+                <input type="password" id="login-password" required
+                       placeholder="••••••••••••"
+                       class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            </div>
+
+            <button type="submit" id="btn-login-submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 px-4 rounded-xl text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center">
+                <span>Sign in to Dashboard</span>
+            </button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="form-register" onsubmit="handleUserRegistration(event)" class="space-y-4 hidden">
+            <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Company / Client Name</label>
+                <input type="text" id="reg-company" required
+                       placeholder="Shree Polychem"
+                       class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Full Name</label>
+                <input type="text" id="reg-fullname" required
+                       placeholder="Manoj Kumar"
+                       class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Work Email</label>
+                <input type="email" id="reg-email" required
+                       placeholder="manoj@shreepolychem.com"
+                       class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Password</label>
+                <input type="password" id="reg-password" required minlength="8"
+                       placeholder="Minimum 8 characters"
+                       class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            </div>
+
+            <button type="submit" id="btn-reg-submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 px-4 rounded-xl text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center">
+                <span>Activate Account & Access Dashboard</span>
+            </button>
+            <p class="text-[11px] text-slate-400 text-center">
+                If Tally Sync has already started, use the same email to automatically connect your books.
+            </p>
+        </form>
+
+        <div class="mt-6 text-center text-xs text-slate-500">
+            Secure, end-to-end encrypted replication directly from your Tally ERP.
+        </div>
+    </div>
+
+    <script>
+        function switchAuthTab(targetTab) {
+            const loginForm = document.getElementById('form-login');
+            const regForm = document.getElementById('form-register');
+            const tabLogin = document.getElementById('tab-login');
+            const tabReg = document.getElementById('tab-register');
+            const alertBox = document.getElementById('auth-alert');
+            alertBox.classList.add('hidden');
+
+            if (targetTab === 'login') {
+                loginForm.classList.remove('hidden');
+                regForm.classList.add('hidden');
+                tabLogin.className = 'py-2 rounded-lg bg-indigo-600 text-white transition-all shadow-sm';
+                tabReg.className = 'py-2 rounded-lg text-slate-400 hover:text-white transition-all';
+            } else {
+                loginForm.classList.add('hidden');
+                regForm.classList.remove('hidden');
+                tabReg.className = 'py-2 rounded-lg bg-indigo-600 text-white transition-all shadow-sm';
+                tabLogin.className = 'py-2 rounded-lg text-slate-400 hover:text-white transition-all';
+            }
+        }
+
+        function displayAlert(message, isError = true) {
+            const alertBox = document.getElementById('auth-alert');
+            alertBox.textContent = message;
+            alertBox.classList.remove('hidden');
+            if (isError) {
+                alertBox.className = 'mb-4 p-3 rounded-xl text-xs font-medium border bg-red-950/40 text-red-300 border-red-800/50';
+            } else {
+                alertBox.className = 'mb-4 p-3 rounded-xl text-xs font-medium border bg-emerald-950/40 text-emerald-300 border-emerald-800/50';
+            }
+        }
+
+        async function handleUserLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value;
+            const submitBtn = document.getElementById('btn-login-submit');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Authenticating...';
+
+            try {
+                const response = await fetch('/api/v1/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.detail || 'Login failed. Please verify credentials.');
+                }
+
+                localStorage.setItem('o3_token', data.access_token);
+                localStorage.setItem('o3_user', JSON.stringify(data.user));
+                window.location.href = '/dashboard';
+            } catch (err) {
+                displayAlert(err.message, true);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign in to Dashboard';
+            }
+        }
+
+        async function handleUserRegistration(event) {
+            event.preventDefault();
+            const client_name = document.getElementById('reg-company').value.trim();
+            const full_name = document.getElementById('reg-fullname').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const password = document.getElementById('reg-password').value;
+            const submitBtn = document.getElementById('btn-reg-submit');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating Account...';
+
+            try {
+                const response = await fetch('/api/v1/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ client_name, full_name, email, password })
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.detail || 'Registration failed.');
+                }
+
+                localStorage.setItem('o3_token', data.access_token);
+                localStorage.setItem('o3_user', JSON.stringify(data.user));
+                window.location.href = '/dashboard';
+            } catch (err) {
+                displayAlert(err.message, true);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Create Organization & Account';
+            }
+        }
+
+        // Auto-redirect if already logged in
+        (async function checkExistingAuth() {
+            const token = localStorage.getItem('o3_token');
+            if (!token) return;
+            try {
+                const res = await fetch('/api/v1/auth/me', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (res.ok) {
+                    window.location.href = '/dashboard';
+                }
+            } catch (e) {}
+        })();
+    </script>
+</body>
+</html>

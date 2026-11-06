@@ -1,0 +1,12 @@
+﻿{
+    "static_variables": [
+        {
+            "name": "svExportFormat",
+            "value": "$$SysName:jsonex"
+        },
+	    {
+            "name": "svCurrentCompany",
+            "value": "Bhrama Enterprises"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+
+{
+    "status": "1",
+    "tallymessage": [
+        {
+            "metadata": {
+                "type": "Ledger",
+                "name": "ಶ್ರೀ",
+                "reservedname": "",
+                "id": "3694",
+                "reqname": "ಶ್ರೀ"
+            },
+            "parent": {
+                "type": "String",
+                "value": "Sundry Debtors"
+            },
+            "taxtype": {
+                "type": "String",
+                "value": "Others"
+            },
+            "isbillwiseon": {
+                "type": "Logical",
+                "value": true
+            },
+            "iscostcentreson": {
+                "type": "Logical",
+                "value": false
+            },
+            "isrevenue": {
+                "type": "Logical",
+                "value": false
+            },
+            "isdeemedpositive": {
+                "type": "Logical",
+                "value": true
+            },
+            "candelete": {
+                "type": "Logical",
+                "value": true
+            },
+            "forpayroll": {
+                "type": "Logical",
+                "value": false
+            },
+            "masterid": {
+                "type": "Number",
+                "value": " 3694"
+            },
+            "openingbalance": {
+                "type": "Amount",
+                "value": "0.00"
+            },
+            "languagename": [
+                {
+                    "name": [
+                        {
+                            "metadata": true,
+                            "type": "String"
+                        },
+                        "ಶ್ರೀ"
+                    ],
+                    "languageid": {
+                        "type": "Number",
+                        "value": "0"
+                    }
+                }
+            ]
+        }
+    ]
+}

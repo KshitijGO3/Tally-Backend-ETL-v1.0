@@ -1,0 +1,343 @@
+
+{
+    "status": "1",
+    "data": {
+        "metadata": {
+            "is_cmp_dep_type": true,
+            "cmp_locus": 4,
+            "cmp_dep_type": 64
+        },
+        "collection": [
+            {
+                "metadata": {
+                    "type": "Voucher",
+                    "remoteid": "f0347998-2c19-4a5e-a4ed-01f589cb92a5-00000001",
+                    "vchkey": "f0347998-2c19-4a5e-a4ed-01f589cb92a5-0000b2b3:00000008",
+                    "vchtype": "Receipt",
+                    "objview": "Accounting Voucher View"
+                },
+                "date": {
+                    "type": "Date",
+                    "value": "20250401"
+                },
+                "guid": "f0347998-2c19-4a5e-a4ed-01f589cb92a5-00000001",
+                "vouchertypename": "Receipt",
+                "vouchernumber": "1",
+                "serialmaster": {
+                    "type": "String",
+                    "value": ""
+                },
+                "areserialmaster": {
+                    "type": "String",
+                    "value": ""
+                },
+                "numberingstyle": "Auto Retain",
+                "persistedview": "Accounting Voucher View",
+                "isdeleted": false,
+                "asoriginal": false,
+                "isdeemedpositive": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "isinvoice": false,
+                "aspayslip": false,
+                "isdeletedvchretained": false,
+                "isnegisposset": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "masterid": {
+                    "type": "Number",
+                    "value": " 1"
+                },
+                "voucherkey": {
+                    "type": "Number",
+                    "value": "196481868890120"
+                },
+                "voucherretainkey": {
+                    "type": "Number",
+                    "value": "1"
+                },
+                "reuseholeid": {
+                    "type": "Number",
+                    "value": "0"
+                },
+                "amount": {
+                    "type": "Amount",
+                    "value": "1000000.00"
+                },
+                "vouchernumberseries": {
+                    "type": "String",
+                    "value": "Default"
+                },
+                "allledgerentries": [
+                    {
+                        "ledgername": {
+                            "type": "String",
+                            "value": "Capital A/c - Sanjay Sharma"
+                        },
+                        "isdeemedpositive": {
+                            "type": "Logical",
+                            "value": false
+                        },
+                        "islastdeemedpositive": {
+                            "type": "Logical",
+                            "value": false
+                        },
+                        "amount": {
+                            "type": "Amount",
+                            "value": "1000000.00"
+                        },
+                        "vatassessablevalue": {
+                            "type": "Amount",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "ledgername": {
+                            "type": "String",
+                            "value": "Capital A/c - Vijay Verma"
+                        },
+                        "isdeemedpositive": {
+                            "type": "Logical",
+                            "value": false
+                        },
+                        "islastdeemedpositive": {
+                            "type": "Logical",
+                            "value": false
+                        },
+                        "amount": {
+                            "type": "Amount",
+                            "value": "1000000.00"
+                        },
+                        "vatassessablevalue": {
+                            "type": "Amount",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "ledgername": {
+                            "type": "String",
+                            "value": "HDFC BANK A/c"
+                        },
+                        "isdeemedpositive": {
+                            "type": "Logical",
+                            "value": true
+                        },
+                        "islastdeemedpositive": {
+                            "type": "Logical",
+                            "value": true
+                        },
+                        "amount": {
+                            "type": "Amount",
+                            "value": "-2000000.00"
+                        },
+                        "vatassessablevalue": {
+                            "type": "Amount",
+                            "value": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Voucher",
+                    "remoteid": "f0347998-2c19-4a5e-a4ed-01f589cb92a5-00000032",
+                    "vchkey": "f0347998-2c19-4a5e-a4ed-01f589cb92a5-0000b34b:00000010",
+                    "vchtype": "Sales",
+                    "objview": "Invoice Voucher View"
+                },
+                "date": {
+                    "type": "Date",
+                    "value": "20250831"
+                },
+                "guid": "f0347998-2c19-4a5e-a4ed-01f589cb92a5-00000032",
+                "vouchertypename": "Sales",
+                "vouchernumber": "11",
+                "reference": {
+                    "type": "String",
+                    "value": ""
+                },
+                "serialmaster": {
+                    "type": "String",
+                    "value": ""
+                },
+                "areserialmaster": {
+                    "type": "String",
+                    "value": ""
+                },
+                "numberingstyle": "Auto Retain",
+                "persistedview": "Invoice Voucher View",
+                "isdeleted": false,
+                "asoriginal": false,
+                "isdeemedpositive": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "isinvoice": true,
+                "aspayslip": false,
+                "isdeletedvchretained": false,
+                "isnegisposset": {
+                    "type": "Logical",
+                    "value": true
+                },
+                "masterid": {
+                    "type": "Number",
+                    "value": " 50"
+                },
+                "voucherkey": {
+                    "type": "Number",
+                    "value": "197134703919120"
+                },
+                "voucherretainkey": {
+                    "type": "Number",
+                    "value": "41"
+                },
+                "reuseholeid": {
+                    "type": "Number",
+                    "value": "0"
+                },
+                "amount": {
+                    "type": "Amount",
+                    "value": "-180000.00"
+                },
+                "vouchernumberseries": {
+                    "type": "String",
+                    "value": "Default"
+                },
+                "allinventoryentries": [
+                    {
+                        "stockitemname": {
+                            "type": "String",
+                            "value": "Apple MacBook Pro Laptop"
+                        },
+                        "addlamount": {
+                            "type": "Amount",
+                            "value": ""
+                        },
+                        "isdeemedpositive": {
+                            "type": "Logical",
+                            "value": false
+                        },
+                        "islastdeemedpositive": {
+                            "type": "Logical",
+                            "value": false
+                        },
+                        "rate": {
+                            "type": "Rate",
+                            "value": "180000.00/Nos"
+                        },
+                        "discount": {
+                            "type": "Number",
+                            "value": "0"
+                        },
+                        "amount": {
+                            "type": "Amount",
+                            "value": "180000.00"
+                        },
+                        "actualqty": {
+                            "type": "Quantity",
+                            "value": " 1 Nos"
+                        },
+                        "billedqty": {
+                            "type": "Quantity",
+                            "value": " 1 Nos"
+                        },
+                        "batchallocations": [
+                            {
+                                "batchname": {
+                                    "type": "String",
+                                    "value": "Primary Batch"
+                                },
+                                "indentno": {
+                                    "type": "String",
+                                    "value": "u0004 Not Applicable"
+                                },
+                                "orderno": {
+                                    "type": "String",
+                                    "value": "u0004 Not Applicable"
+                                },
+                                "trackingnumber": {
+                                    "type": "String",
+                                    "value": "u0004 Not Applicable"
+                                },
+                                "addlamount": {
+                                    "type": "Amount",
+                                    "value": ""
+                                },
+                                "batchdiscount": {
+                                    "type": "Number",
+                                    "value": "0"
+                                },
+                                "amount": {
+                                    "type": "Amount",
+                                    "value": "180000.00"
+                                },
+                                "actualqty": {
+                                    "type": "Quantity",
+                                    "value": " 1 Nos"
+                                },
+                                "billedqty": {
+                                    "type": "Quantity",
+                                    "value": " 1 Nos"
+                                },
+                                "batchrate": {
+                                    "type": "Rate",
+                                    "value": "180000.00/Nos"
+                                }
+                            }
+                        ],
+                        "accountingallocations": [
+                            {
+                                "ledgername": {
+                                    "type": "String",
+                                    "value": "Sales"
+                                },
+                                "isdeemedpositive": {
+                                    "type": "Logical",
+                                    "value": false
+                                },
+                                "islastdeemedpositive": {
+                                    "type": "Logical",
+                                    "value": false
+                                },
+                                "amount": {
+                                    "type": "Amount",
+                                    "value": "180000.00"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "ledgerentries": [
+                    {
+                        "ledgername": {
+                            "type": "String",
+                            "value": "Abc Party"
+                        },
+                        "isdeemedpositive": {
+                            "type": "Logical",
+                            "value": true
+                        },
+                        "islastdeemedpositive": {
+                            "type": "Logical",
+                            "value": true
+                        },
+                        "amount": {
+                            "type": "Amount",
+                            "value": "-180000.00"
+                        },
+                        "billallocations": [
+                            {
+                                "amount": {
+                                    "type": "Amount",
+                                    "value": "-180000.00"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

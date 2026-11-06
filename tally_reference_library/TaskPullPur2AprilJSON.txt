@@ -1,0 +1,58 @@
+HTTP Header
+
+content-type:application/json
+version: 1
+tallyrequest: export
+type:collection
+id: TSPLPurchaseVouchers
+
+Pay Load
+
+{
+    "static_variables": [
+        {
+            "name": "svExportFormat",
+            "value": "jsonex"
+        },
+       {
+            "name": "svCurrentCompany",
+            "value": "Bhrama Enterprises"
+        }
+			
+    ],
+"tdlmessage": [
+{
+    "definitions": [
+        {
+            "metadata": {
+                "name": "TSPL Purchase Vouchers", 
+                "type": "Collection"
+            }, 
+            "attributes": [
+                {
+                    "Type": "Vouchers:VoucherType"
+                }, 
+                {
+                    "Child Of": "$$VchTypePurchase"
+                }, 
+                {
+                    "Native Method": "Date, VoucherTypeName, VoucherNumber, Partyledgername"
+                }, 
+                {
+                    "Filters": "Period Filter"
+                }
+            ]
+        }, 
+        {
+            "metadata": {
+                "name": "PeriodFilter", 
+                "type": "System", 
+                "sys_type": "Formulae", 
+                "ismodify": true
+            }, 
+            "value": "$Date = ($$Date:\"02-04-2025\")"
+        }
+    ]
+}
+]
+}

@@ -1,0 +1,24 @@
+
+{
+    "static_variables": [
+        {
+            "name": "svMstImportFormat",
+            "value": "jsonex"
+        },
+{
+            "name": "svCurrentCompany",
+            "value": "Bhrama Enterprises"
+        }
+    ],
+    "tallymessage": [
+        {
+            "metadata": {
+                "type": "Ledger",
+                "action": "create",
+                "name": "Bank Of Baroda"
+            },
+            "name": "Bank Of Baroda",
+            "parent": "Bank Accounts"
+        }
+    ]
+}

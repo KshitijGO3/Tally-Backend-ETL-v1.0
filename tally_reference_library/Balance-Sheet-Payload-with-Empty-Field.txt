@@ -1,0 +1,2 @@
+
+{    "static_variables": [        {            "name": "svExportFormat",            "value": "jsonex"        },      {            "name": "svCurrentCompany",            "value": "Bhrama Enterprises"        }    ],  "tdlmessage": [       {    "definitions": [        {            "metadata": {                "name": "Balance Sheet",                 "type": "Report",                 "ismodify": true            },             "attributes": [                {                    "Export Empty Fields": "Yes"                }            ]        }    ]}    ]}

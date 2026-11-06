@@ -1,0 +1,176 @@
+
+{
+    "status": "1",
+    "data": {
+        "metadata": {
+            "is_mst_dep_type": true,
+            "mst_dep_type": "8"
+        },
+        "collection": [
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "10Decoders Consultancy services Pvt Ltd - B013650",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "ledgerphone": {
+                    "type": "String",
+                    "value": "9600688291"
+                },
+                "ledgercontact": {
+                    "type": "String",
+                    "value": "Prem Kumar"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "10Decoders Consultancy services Pvt Ltd - B013650",
+                            "B013650"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+            {
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "10Decoders software",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Line 1"
+                },
+                "ledgerphone": {
+                    "type": "String",
+                    "value": "9789516034"
+                },
+                "ledgercontact": {
+                    "type": "String",
+                    "value": "Vijayasundar"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "10Decoders software",
+                            "B013214"
+                        ],
+                        "languageid": {
+                            "type": "Number",
+                            "value": " 1033"
+                        }
+                    }
+                ]
+            },
+{
+                "metadata": {
+                    "type": "Ledger",
+                    "name": "ಶ್ರೀ",
+                    "reservedname": ""
+                },
+                "parent": {
+                    "type": "String",
+                    "value": "Sundry Debtors"
+                },
+                "closingbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "onaccountvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "tbalopening": {
+                    "type": "Amount",
+                    "value": "0.00"
+                },
+                "closingonacctvalue": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "closingdronacctvalue": {
+                    "type": "Logical",
+                    "value": false
+                },
+                "ledopeningbalance": {
+                    "type": "Amount",
+                    "value": ""
+                },
+                "languagename": [
+                    {
+                        "name": [
+                            {
+                                "metadata": true,
+                                "type": "String"
+                            },
+                            "ಶ್ರೀ"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

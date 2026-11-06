@@ -1,0 +1,271 @@
+[
+  {
+    "name": "Company",
+    "category": "Metadata",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 1,
+    "sample_keys": [
+      "startingfrom",
+      "booksfrom",
+      "name",
+      "guid",
+      "masterid"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Company', 'name': 'Bhrama Enterprises', 'reservedname': ''}, 'startingfrom': {'type': 'Date', 'value': '20250401'}, 'booksfrom'"
+  },
+  {
+    "name": "Currency",
+    "category": "Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 2,
+    "sample_keys": [
+      "name",
+      "guid",
+      "decimalsymbol",
+      "masterid"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Currency', 'name': '\u20b9', 'reservedname': ''}, 'name': {'type': 'String', 'value': '\u20b9'}, 'guid': {'type': 'String', 'value': 'f03"
+  },
+  {
+    "name": "Group",
+    "category": "Accounting Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 31,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "isaddable",
+      "masterid",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Group', 'name': 'Bank Accounts', 'reservedname': 'Bank Accounts'}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a4ed"
+  },
+  {
+    "name": "Ledger",
+    "category": "Accounting Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 53,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "masterid",
+      "closingbalance",
+      "openingbalance",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Ledger', 'name': 'Abc Party', 'reservedname': ''}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a4ed-01f589cb92a5-00"
+  },
+  {
+    "name": "VoucherType",
+    "category": "Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 24,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "numberingmethod",
+      "masterid",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Voucher Type', 'name': 'Attendance', 'reservedname': 'Attendance'}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a4e"
+  },
+  {
+    "name": "StockGroup",
+    "category": "Inventory Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 8,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "masterid",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Stock Group', 'name': 'Applications', 'reservedname': ''}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a4ed-01f589c"
+  },
+  {
+    "name": "StockItem",
+    "category": "Inventory Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 19,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "baseunits",
+      "masterid",
+      "closingbalance",
+      "openingbalance",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Stock Item', 'name': 'Apple MacBook Pro Laptop', 'reservedname': ''}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a"
+  },
+  {
+    "name": "Unit",
+    "category": "Inventory Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 5,
+    "sample_keys": [
+      "name",
+      "guid",
+      "issimpleunit",
+      "masterid",
+      "decimalplaces"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Unit', 'name': 'gm', 'reservedname': ''}, 'name': {'type': 'String', 'value': 'gm'}, 'guid': {'type': 'String', 'value': 'f0347"
+  },
+  {
+    "name": "Godown",
+    "category": "Inventory Master",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 3,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "masterid",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Godown', 'name': 'Main Location', 'reservedname': ''}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a4ed-01f589cb92a"
+  },
+  {
+    "name": "CostCategory",
+    "category": "Optional (F11 Cost Centres)",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 1,
+    "sample_keys": [
+      "guid",
+      "masterid",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Cost Category', 'name': 'Primary Cost Category', 'reservedname': ''}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a"
+  },
+  {
+    "name": "CostCentre",
+    "category": "Optional (F11 Cost Centres)",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 5,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "category",
+      "masterid",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Cost Centre', 'name': 'Additional Charges', 'reservedname': ''}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a4ed-0"
+  },
+  {
+    "name": "Budget",
+    "category": "Optional (F11 Budgets)",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 0,
+    "sample_keys": [],
+    "error": null,
+    "raw_preview": null
+  },
+  {
+    "name": "StockCategory",
+    "category": "Optional (F11 Stock Categories)",
+    "status_code": 200,
+    "tally_status": "1",
+    "count": 3,
+    "sample_keys": [
+      "guid",
+      "parent",
+      "masterid",
+      "languagename"
+    ],
+    "error": null,
+    "raw_preview": "{'metadata': {'type': 'Stock Category', 'name': 'Fridge', 'reservedname': ''}, 'guid': {'type': 'String', 'value': 'f0347998-2c19-4a5e-a4ed-01f589cb92"
+  },
+  {
+    "name": "PriceLevel",
+    "category": "Optional (F11 Price Levels)",
+    "status_code": "ERR",
+    "tally_status": "EXCEPTION",
+    "count": 0,
+    "sample_keys": [],
+    "error": "timed out",
+    "raw_preview": null
+  },
+  {
+    "name": "Batch",
+    "category": "Optional (F11 Batch)",
+    "status_code": "ERR",
+    "tally_status": "EXCEPTION",
+    "count": 0,
+    "sample_keys": [],
+    "error": "timed out",
+    "raw_preview": null
+  },
+  {
+    "name": "TaxUnit",
+    "category": "Optional (F11 GST)",
+    "status_code": "ERR",
+    "tally_status": "EXCEPTION",
+    "count": 0,
+    "sample_keys": [],
+    "error": "timed out",
+    "raw_preview": null
+  },
+  {
+    "name": "AttendanceType",
+    "category": "Optional (F11 Payroll)",
+    "status_code": "ERR",
+    "tally_status": "EXCEPTION",
+    "count": 0,
+    "sample_keys": [],
+    "error": "timed out",
+    "raw_preview": null
+  },
+  {
+    "name": "EmployeeGroup",
+    "category": "Optional (F11 Payroll)",
+    "status_code": "ERR",
+    "tally_status": "EXCEPTION",
+    "count": 0,
+    "sample_keys": [],
+    "error": "timed out",
+    "raw_preview": null
+  },
+  {
+    "name": "Employee",
+    "category": "Optional (F11 Payroll)",
+    "status_code": "ERR",
+    "tally_status": "EXCEPTION",
+    "count": 0,
+    "sample_keys": [],
+    "error": "timed out",
+    "raw_preview": null
+  },
+  {
+    "name": "PayHead",
+    "category": "Optional (F11 Payroll)",
+    "status_code": "ERR",
+    "tally_status": "EXCEPTION",
+    "count": 0,
+    "sample_keys": [],
+    "error": "timed out",
+    "raw_preview": null
+  }
+]

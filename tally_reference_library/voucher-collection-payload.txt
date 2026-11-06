@@ -1,0 +1,33 @@
+
+{
+    "static_variables": [
+        {
+            "name": "svExportFormat",
+            "value": "jsonex"
+        },
+        {
+            "name": "svCurrentCompany",
+            "value": "Bhrama Enterprises"
+        }
+    ],
+    "tdlmessage": [
+        {
+            "definitions": [
+                {
+                    "metadata": {
+                        "name": "TSPLVoucherColl",
+                        "type": "Collection"
+                    },
+                    "attributes": [
+                        {
+                            "Type": "Voucher"
+                        },
+                        {
+                            "Native Method": "VoucherNumber, VoucherTypeName, Date, Amount"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
